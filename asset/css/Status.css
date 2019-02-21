@@ -1,0 +1,13 @@
+.plk-status-list
+{
+    margin: 0;
+    padding: 0;
+}
+
+.plk-status {
+    margin: 0;
+    border: var(--border);
+    padding: var(--padding-horzontal);
+
+    list-style: none inside none;
+}

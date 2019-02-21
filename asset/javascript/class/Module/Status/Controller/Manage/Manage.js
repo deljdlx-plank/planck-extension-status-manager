@@ -64,7 +64,33 @@ Planck.Extension.StatusManager.Module.Status.Controller.Manage.prototype.addStat
 
 
     this.$statusList.append(statusComponent.getElement());
+
+
+    statusComponent.getElement().click(function(event) {
+        if(!$(event.target).data('manager')) {
+            var statusComponent = $(event.target).parents('li').data('manager');
+        }
+        else {
+            var statusComponent = $(event.target).data('manager');
+        }
+
+        console.log(statusComponent);
+        this.loadEntityEditor(statusComponent.getModel());
+
+    }.bind(this));
 };
+
+
+Planck.Extension.StatusManager.Module.Status.Controller.Manage.prototype.loadEntityEditor = function(statusEntity)
+{
+    var entityEditor = new Planck.Extension.EntityEditor.View.Component.EntityEditor(this.$container.find('.plk-editor-container'));
+    entityEditor.setEntity(statusEntity);
+    entityEditor.load();
+
+};
+
+
+
 
 
 Planck.Extension.StatusManager.Module.Status.Controller.Manage.prototype.createStatus = function(statusName)

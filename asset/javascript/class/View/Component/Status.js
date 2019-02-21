@@ -10,14 +10,17 @@ Planck.Extension.StatusManager.View.Component.Status.prototype.setModel = functi
 
 Planck.Extension.StatusManager.View.Component.Status.prototype.getElement = function()
 {
-    this.$element = $(
-        '<li class="plk-status" data-behaviour="interactive" data-status-id="'+this.model.getId()+'">'+
+    if(!this.$element) {
+        this.$element = $(
+            '<li class="plk-status" data-behaviour="interactive" data-status-id="'+this.model.getId()+'">'+
             '<span class="plk-handler"></span>'+
             '<span class="label">'+this.model.getLabel()+'</span>'+
-        '</li>'
-    );
+            '</li>'
+        );
+        this.$element.data('manager', this);
+    }
 
-    this.$element.data('manager', this);
+
 
     return this.$element
 };

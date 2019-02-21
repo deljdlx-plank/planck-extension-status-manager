@@ -17,9 +17,11 @@ class StatusEditor extends Component
      */
     protected $repository;
 
-    public function setRepository(Repository $repository)
+    public function setRepository(Repository $repository = null)
     {
+
         $this->repository = $repository;
+
         return $this;
     }
 
@@ -31,19 +33,13 @@ class StatusEditor extends Component
 
 
         $this->dom = new Row();
-        $this->dom->addClass('plk-panel');
+        //$this->dom->addClass('plk-panel');
         $this->dom->addClass('plk-status-manager');
         $this->dom->split(3,9);
 
         $list = new Ol();
         $list->addClass('plk-status-list');
         $list->setAttribute('data-repository', get_class($this->repository));
-
-
-        //$item = new Status();
-        //$list->append($item->getDom());
-        //$list->append($item->getDom());
-        //$list->append($item->getDom());
 
 
 
@@ -58,6 +54,10 @@ class StatusEditor extends Component
 
         $this->dom->getCol(0)->append($formContainer);
         $this->dom->getCol(0)->append($statusListContainer);
+        $this->dom->getCol(0)->addClass('plk-panel');
+
+        $this->dom->getCol(1)->addClass('plk-editor-container');
+        $this->dom->getCol(1)->addClass('plk-panel');
 
 
 

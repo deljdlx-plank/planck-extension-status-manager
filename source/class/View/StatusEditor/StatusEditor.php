@@ -39,10 +39,11 @@ class StatusEditor extends Component
         $list->addClass('plk-status-list');
         $list->setAttribute('data-repository', get_class($this->repository));
 
-        $item = new Status();
-        $list->append($item->getDom());
-        $list->append($item->getDom());
-        $list->append($item->getDom());
+
+        //$item = new Status();
+        //$list->append($item->getDom());
+        //$list->append($item->getDom());
+        //$list->append($item->getDom());
 
 
 

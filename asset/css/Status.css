@@ -4,10 +4,27 @@
     padding: 0;
 }
 
+
+
 .plk-status {
     margin: 0;
     border: var(--border);
-    padding: var(--padding-horzontal);
-
+    position: relative;
     list-style: none inside none;
+    margin-bottom: var(--margin-medium);
+}
+
+.plk-status .plk-handler {
+    background-color: var(--background-medium);
+    display: inline-block;
+    vertical-align: middle;
+    height:calc(var(--line-height) * 1.5);
+    width: 32px;
+    margin-right: var(--margin-medium);
+    cursor: move;
+}
+.plk-status .label {
+    display: inline-block;
+    vertical-align: middle;
+    /*padding: var(--padding-horzontal);*/
 }
